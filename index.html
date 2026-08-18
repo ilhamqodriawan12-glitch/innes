@@ -2,186 +2,124 @@
 <html lang="id">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#191411">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Innes & Ilham — Wedding Photobooth</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
 <style>
-:root{--bg:#f4ede4;--ink:#1e1714;--muted:#75695f;--gold:#ad8751;--gold2:#d5b47d;--card:#fffaf4;--line:#dfcfba}
-*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:radial-gradient(circle at 20% 0,#fff 0,#f7efe6 35%,#e9dbca 100%);color:var(--ink);font-family:Montserrat,Arial,sans-serif}
-button,input{font:inherit}.app{max-width:1400px;margin:auto;padding:22px}.hero{text-align:center;padding:8px 0 20px}.eyebrow{font-size:10px;letter-spacing:5px;color:var(--gold);font-weight:700}.names{font:600 clamp(45px,7vw,82px)/.8 "Cormorant Garamond",serif;margin:18px 0 14px}.names i{color:var(--gold);font-size:.55em;font-weight:500}.date{font-size:11px;letter-spacing:3px;color:var(--muted)}
-.main{display:grid;grid-template-columns:minmax(0,1.4fr) 390px;gap:18px}.card{background:rgba(255,250,244,.82);border:1px solid var(--line);border-radius:26px;box-shadow:0 18px 60px #513b2414;backdrop-filter:blur(12px)}
-.cameraCard{padding:14px}.stage{position:relative;background:#0d0b0a;border-radius:20px;overflow:hidden;aspect-ratio:4/3;display:grid;place-items:center}.stage video{width:100%;height:100%;object-fit:cover;transform:scaleX(-1);display:block}.stage canvas{display:none;width:100%;height:100%;object-fit:contain}.welcome{position:absolute;text-align:center;color:white;padding:20px;pointer-events:none}.welcome strong{font:600 42px "Cormorant Garamond",serif}.welcome p{font-size:11px;opacity:.72}.flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}.flash.on{animation:flash .35s}@keyframes flash{0%{opacity:.9}100%{opacity:0}}.count{position:absolute;inset:0;display:none;place-items:center;background:#0004;color:#fff;font:600 170px "Cormorant Garamond",serif;text-shadow:0 8px 30px #000}.count.on{display:grid}
-.side{padding:16px;display:flex;flex-direction:column;gap:12px}.section{padding:14px;border:1px solid var(--line);border-radius:18px;background:#fffaf5}.label{text-transform:uppercase;letter-spacing:2px;font-size:9px;font-weight:700;color:#80694f;margin-bottom:9px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.grid button,.btn{border:1px solid var(--line);background:white;color:var(--ink);border-radius:12px;padding:11px;cursor:pointer;font-size:11px;font-weight:700}.grid button.active{background:var(--ink);border-color:var(--ink);color:white}.btn{width:100%}.btn.primary{background:var(--ink);color:white;border-color:var(--ink);padding:14px;font-size:13px}.btn.gold{background:var(--gold);color:white;border-color:var(--gold)}.btn:disabled{opacity:.42;cursor:not-allowed}.file{width:100%;font-size:10px}.help{font-size:9px;line-height:1.55;color:var(--muted);margin-top:7px}.status{font-size:10px;color:var(--muted);min-height:16px;margin-top:8px}.status.ok{color:#52755a}.status.err{color:#a14b4b}.thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.thumb{aspect-ratio:1;overflow:hidden;border-radius:8px;background:#eee}.thumb img{width:100%;height:100%;object-fit:cover}.result{text-align:center;display:none}.result.show{display:block}.result h2{font:600 34px "Cormorant Garamond";margin:2px}.qr{background:white;border-radius:14px;padding:9px;margin:5px auto}.download{display:inline-block;text-decoration:none}.tiny{font-size:9px;color:var(--muted)}.loading{display:inline-block;width:15px;height:15px;border:2px solid #ddd;border-top-color:var(--gold);border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle}@keyframes spin{to{transform:rotate(360deg)}}footer{text-align:center;font-size:8px;letter-spacing:2px;color:#988977;padding:17px}
-@media(max-width:900px){.app{padding:10px}.main{grid-template-columns:1fr}.side{display:grid;grid-template-columns:1fr 1fr}.result,.shootBox{grid-column:1/-1}.cameraCard{padding:9px}}
-@media(max-width:560px){.side{display:flex}.stage{aspect-ratio:3/4}.names{font-size:51px}.date{font-size:9px}}
+:root{--ink:#241d1b;--gold:#b8894d;--cream:#f8f1e8;--line:#e4cdb0}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 20% 10%,#fff,#f8f1e8 45%,#eadcc9);color:var(--ink);font-family:Montserrat,sans-serif}
+.app{max-width:1300px;margin:auto;padding:22px}.brand{text-align:center;margin-bottom:18px}.eyebrow{font-size:10px;letter-spacing:5px;color:var(--gold);text-transform:uppercase}.brand h1{font:600 62px/0.85 "Cormorant Garamond",serif;margin:13px 0}.brand h1 span{color:var(--gold);font-size:31px;font-style:italic}.date{font-size:11px;letter-spacing:3px}
+.layout{display:grid;grid-template-columns:1.45fr .72fr;gap:18px}.panel{background:#ffffffbd;border:1px solid var(--line);border-radius:26px;padding:16px;box-shadow:0 18px 60px #5d3e2018;backdrop-filter:blur(12px)}
+.stage{position:relative;background:#111;border-radius:20px;overflow:hidden;display:flex;justify-content:center;align-items:center;min-height:580px}.stage canvas{width:100%;display:block}.placeholder{position:absolute;color:white;text-align:center}.placeholder b{font:600 34px "Cormorant Garamond",serif}.placeholder p{font-size:11px;opacity:.7}.countdown{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:#0005;z-index:3}.countdown.show{display:flex}.countdown span{font:600 180px "Cormorant Garamond";color:#fff;text-shadow:0 4px 30px #000}
+.controls{display:flex;flex-direction:column;gap:12px}.card{border:1px solid var(--line);border-radius:18px;padding:14px;background:#fff9}.label{font-size:9px;letter-spacing:2px;font-weight:700;color:#80684e;text-transform:uppercase;margin-bottom:8px}
+.btn{width:100%;border:1px solid var(--line);border-radius:12px;background:white;padding:13px;font:600 12px Montserrat;cursor:pointer}.btn.primary{background:var(--ink);color:#fff;border-color:var(--ink)}.btn.gold{background:var(--gold);color:white;border-color:var(--gold)}.btn:disabled{opacity:.45;cursor:not-allowed}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.grid .btn.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+input[type=file]{width:100%;font-size:10px}.hint,.small{font-size:9px;line-height:1.55;color:#756a63;margin-top:6px}.status{font-size:10px;line-height:1.45;color:#756a63;margin-top:7px}.status.err{color:#a64747}.status.ok{color:#477451}
+.preview{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.thumb{aspect-ratio:1;overflow:hidden;border-radius:8px;background:#eee}.thumb img{width:100%;height:100%;object-fit:cover}
+.result{display:none;text-align:center}.result.show{display:block}.result h2{font:600 32px "Cormorant Garamond";margin:3px}.qr{background:#fff;padding:8px;border-radius:12px}.result a{text-decoration:none;display:block}#uploadForm{display:none}
+footer{text-align:center;font-size:9px;letter-spacing:2px;color:#9a8c7b;margin:16px}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.stage{min-height:auto}.brand h1{font-size:48px}}@media(max-width:560px){.app{padding:10px}.brand h1{font-size:44px}}
 </style>
 </head>
 <body>
 <div class="app">
-<header class="hero">
-<div class="eyebrow">WEDDING PHOTOBOOTH</div>
-<div class="names">Innes <i>&amp;</i> Ilham</div>
-<div class="date">21 SEPTEMBER 2027 · PONOROGO</div>
-</header>
-
-<main class="main">
-<section class="card cameraCard">
-  <div class="stage" id="stage">
-    <video id="video" autoplay muted playsinline></video>
-    <canvas id="finalCanvas"></canvas>
-    <div class="welcome" id="welcome"><strong>Ready for your moment?</strong><p>Aktifkan kamera untuk memulai.</p></div>
-    <div class="count" id="count">3</div>
-    <div class="flash" id="flash"></div>
-  </div>
-</section>
-
-<aside class="card side">
-  <div class="section">
-    <div class="label">01 · Camera</div>
-    <button class="btn primary" id="cameraBtn">Aktifkan Kamera</button>
-    <div class="status" id="cameraStatus"></div>
-  </div>
-
-  <div class="section">
-    <div class="label">02 · Photo Grid</div>
-    <div class="grid">
-      <button class="active" data-grid="1">1 Foto</button>
-      <button data-grid="2">2 Foto</button>
-      <button data-grid="3">3 Foto</button>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="label">03 · Twibbon / Frame</div>
-    <input class="file" id="frameInput" type="file" accept="image/png,image/webp,image/jpeg">
-    <div class="help">Gunakan PNG transparan untuk hasil paling bagus. Frame akan diletakkan di atas foto.</div>
-  </div>
-
-  <div class="section">
-    <div class="label">04 · Preview</div>
-    <div class="thumbs" id="thumbs"></div>
-  </div>
-
-  <div class="section shootBox">
-    <button class="btn gold" id="shootBtn" disabled>START PHOTO</button>
-    <button class="btn" id="resetBtn" disabled style="margin-top:7px">ULANGI</button>
-    <div class="status" id="status"></div>
-  </div>
-
-  <div class="section result" id="result">
-    <h2>Your Memory is Ready</h2>
-    <canvas id="qr" class="qr" width="220" height="220"></canvas>
-    <div class="tiny">Scan QR untuk membuka halaman download foto.</div>
-    <a class="btn primary download" id="downloadBtn" target="_blank" rel="noopener" style="margin-top:10px">DOWNLOAD FOTO</a>
-  </div>
-</aside>
-</main>
+<header class="brand"><div class="eyebrow">Wedding Photobooth</div><h1>Innes <span>&amp;</span> Ilham</h1><div class="date">21 SEPTEMBER 2027 · PONOROGO</div></header>
+<div class="layout">
+<section class="panel"><div class="stage">
+<video id="video" autoplay playsinline muted style="display:none"></video>
+<canvas id="canvas"></canvas>
+<div class="placeholder" id="placeholder"><b>Ready for your moment?</b><p>Aktifkan kamera untuk memulai.</p></div>
+<div class="countdown" id="countdown"><span>3</span></div>
+</div></section>
+<aside class="panel controls">
+<div class="card"><div class="label">01 · Camera</div><button class="btn primary" id="startCamera">Aktifkan Kamera</button><div class="status" id="cameraStatus"></div></div>
+<div class="card"><div class="label">02 · Photo Grid</div><div class="grid">
+<button class="btn active" data-grid="1">1 Foto</button><button class="btn" data-grid="2">2 Foto</button><button class="btn" data-grid="3">3 Foto</button>
+</div></div>
+<div class="card"><div class="label">03 · Twibbon / Frame</div><input id="frameInput" type="file" accept="image/png,image/webp,image/jpeg"><div class="hint">Gunakan PNG transparan untuk hasil paling bagus.</div></div>
+<div class="card"><div class="label">04 · Preview</div><div class="preview" id="preview"></div></div>
+<div class="card"><button class="btn gold" id="shoot" disabled>START PHOTO</button><button class="btn" id="retake" disabled style="margin-top:7px">ULANGI</button><div class="status" id="status"></div></div>
+<div class="card result" id="result"><h2>Your Memory is Ready</h2><canvas id="qr" width="220" height="220" class="qr"></canvas><div class="small">Scan QR untuk membuka dan download foto.</div><a id="download" class="btn primary" target="_blank" style="margin-top:9px">DOWNLOAD FOTO</a></div>
+</aside></div>
 <footer>INNES &amp; ILHAM · 21.09.2027 · MADE WITH LOVE</footer>
-</div>
 
-<!-- Cross-origin upload uses a hidden form + iframe, avoiding fetch/CORS issues with Apps Script redirects. -->
-<form id="uploadForm" method="POST" target="uploadFrame" style="display:none">
-  <input name="image" id="uploadImage">
-  <input name="filename" id="uploadFilename">
+<form id="uploadForm" method="POST" target="uploadFrame">
+<input type="hidden" name="image" id="imageData">
+<input type="hidden" name="filename" id="filename">
+<input type="hidden" name="token" id="uploadToken">
 </form>
 <iframe name="uploadFrame" id="uploadFrame" style="display:none"></iframe>
+</div>
 
 <script>
-/* ============================================================
-   ONLY CHANGE THIS URL IF YOUR APPS SCRIPT URL IS DIFFERENT.
-   It must be the deployed Web App URL ending in /exec.
-   ============================================================ */
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzLJjK1fgAAnA0KDLzedWxZjhYzn8pGHOTgdAjeoAriu8Tu5j2kuSy-6SrCS7SKyDGR/exec';
-
-const video=document.getElementById('video'), finalCanvas=document.getElementById('finalCanvas');
-const ctx=finalCanvas.getContext('2d'), cameraBtn=document.getElementById('cameraBtn');
-const shootBtn=document.getElementById('shootBtn'), resetBtn=document.getElementById('resetBtn');
-const frameInput=document.getElementById('frameInput'), thumbs=document.getElementById('thumbs');
-const statusEl=document.getElementById('status'), countEl=document.getElementById('count');
-const result=document.getElementById('result'), qr=document.getElementById('qr'), downloadBtn=document.getElementById('downloadBtn');
-let stream=null, grid=1, frameImg=null, photos=[], uploadTimer=null;
-
+const APPS_SCRIPT_URL='https://script.google.com/macros/s/AKfycbzLJjK1fgAAnA0KDLzedWxZjhYzn8pGHOTgdAjeoAriu8Tu5j2kuSy-6SrCS7SKyDGR/exec';
+const video=document.getElementById('video'),canvas=document.getElementById('canvas'),ctx=canvas.getContext('2d');
+const shoot=document.getElementById('shoot'),startCamera=document.getElementById('startCamera'),countdown=document.getElementById('countdown');
+const preview=document.getElementById('preview'),statusEl=document.getElementById('status'),result=document.getElementById('result'),retake=document.getElementById('retake');
+const frameInput=document.getElementById('frameInput'),placeholder=document.getElementById('placeholder');
+let stream=null,grid=1,photos=[],frameImg=null;
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
+
 document.querySelectorAll('[data-grid]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-grid]').forEach(x=>x.classList.remove('active'));b.classList.add('active');grid=Number(b.dataset.grid)});
+frameInput.onchange=()=>{const f=frameInput.files[0];if(!f)return;const im=new Image();im.onload=()=>{frameImg=im;statusEl.textContent='Frame siap digunakan.'};im.src=URL.createObjectURL(f)};
 
-cameraBtn.onclick=async()=>{
- try{
-  if(!navigator.mediaDevices?.getUserMedia) throw new Error('Browser tidak menyediakan akses kamera. Pastikan membuka melalui HTTPS.');
-  stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:'user'},width:{ideal:1920},height:{ideal:1080}},audio:false});
-  video.srcObject=stream; await video.play();
-  document.getElementById('welcome').style.display='none';
-  cameraBtn.textContent='Kamera Aktif ✓'; shootBtn.disabled=false;
-  document.getElementById('cameraStatus').textContent='Kamera siap.';
- }catch(e){document.getElementById('cameraStatus').textContent=e.message||'Kamera tidak dapat dibuka.';document.getElementById('cameraStatus').className='status err'}
-};
-
-frameInput.onchange=()=>{
- const file=frameInput.files?.[0]; if(!file)return;
- const img=new Image(); img.onload=()=>{frameImg=img;statusEl.textContent='Frame siap digunakan.'}; img.src=URL.createObjectURL(file);
+startCamera.onclick=async()=>{
+ try{stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'user',width:{ideal:1920},height:{ideal:1080}},audio:false});
+ video.srcObject=stream;await video.play();shoot.disabled=false;placeholder.style.display='none';startCamera.textContent='Kamera Aktif ✓';document.getElementById('cameraStatus').textContent='Kamera siap.';
+ }catch(e){document.getElementById('cameraStatus').textContent='Tidak bisa membuka kamera: '+e.message;document.getElementById('cameraStatus').className='status err'}
 };
 
 async function takePhoto(){
- countEl.classList.add('on');
- for(let i=3;i>0;i--){countEl.textContent=i;await wait(700)}
- countEl.classList.remove('on');
- const c=document.createElement('canvas');
- c.width=video.videoWidth||1280;c.height=video.videoHeight||720;
- const x=c.getContext('2d');x.save();x.translate(c.width,0);x.scale(-1,1);x.drawImage(video,0,0,c.width,c.height);x.restore();
- document.getElementById('flash').classList.add('on');setTimeout(()=>document.getElementById('flash').classList.remove('on'),350);
- return c;
+ countdown.classList.add('show');
+ for(let n=3;n>=1;n--){countdown.querySelector('span').textContent=n;await wait(800)}
+ countdown.classList.remove('show');
+ const c=document.createElement('canvas');c.width=video.videoWidth||1280;c.height=video.videoHeight||720;
+ const x=c.getContext('2d');x.save();x.translate(c.width,0);x.scale(-1,1);x.drawImage(video,0,0,c.width,c.height);x.restore();return c;
 }
-
-function thumbsRender(){thumbs.innerHTML='';photos.forEach(p=>{const d=document.createElement('div');d.className='thumb';const i=new Image();i.src=p.toDataURL('image/jpeg',.9);d.appendChild(i);thumbs.appendChild(d)})}
-
-function cover(img,x,y,w,h){
- const r=Math.max(w/img.width,h/img.height),iw=img.width*r,ih=img.height*r;
- ctx.drawImage(img,x+(w-iw)/2,y+(h-ih)/2,iw,ih);
+function drawCover(img,x,y,w,h){const r=Math.max(w/img.width,h/img.height),iw=img.width*r,ih=img.height*r;ctx.drawImage(img,x+(w-iw)/2,y+(h-ih)/2,iw,ih)}
+function makeFinal(){
+ const w=1200,h=1200,g=18,p=28;canvas.width=w;canvas.height=h;ctx.fillStyle='#111';ctx.fillRect(0,0,w,h);
+ if(grid===1)drawCover(photos[0],p,p,w-p*2,h-p*2);
+ if(grid===2){const cw=(w-g-p*2)/2;drawCover(photos[0],p,p,cw,h-p*2);drawCover(photos[1],p+cw+g,p,cw,h-p*2)}
+ if(grid===3){const cw=(w-g-p*2)/2,ch=(h-g-p*2)/2;drawCover(photos[0],p,p,cw,ch);drawCover(photos[1],p+cw+g,p,cw,ch);drawCover(photos[2],p,p+ch+g,cw,ch);drawCover(photos[2],p+cw+g,p+ch+g,cw,ch)}
+ if(frameImg)ctx.drawImage(frameImg,0,0,w,h);
 }
+function renderPreview(){preview.innerHTML='';photos.forEach(p=>{const d=document.createElement('div');d.className='thumb';const i=new Image();i.src=p.toDataURL('image/jpeg',.9);d.appendChild(i);preview.appendChild(d)})}
 
-function buildFinal(){
- const W=1200,H=1200,gap=18,pad=26;
- finalCanvas.width=W;finalCanvas.height=H;ctx.fillStyle='#171311';ctx.fillRect(0,0,W,H);
- if(grid===1) cover(photos[0],pad,pad,W-pad*2,H-pad*2);
- if(grid===2){let w=(W-gap-pad*2)/2;cover(photos[0],pad,pad,w,H-pad*2);cover(photos[1],pad+w+gap,pad,w,H-pad*2)}
- if(grid===3){let w=(W-gap-pad*2)/2,h=(H-gap-pad*2)/2;cover(photos[0],pad,pad,w,h);cover(photos[1],pad+w+gap,pad,w,h);cover(photos[2],pad,pad+h+gap,w,h);cover(photos[2],pad+w+gap,pad+h+gap,w,h)}
- if(frameImg)ctx.drawImage(frameImg,0,0,W,H);
- finalCanvas.style.display='block';video.style.display='none';
-}
-
-shootBtn.onclick=async()=>{
- shootBtn.disabled=true;resetBtn.disabled=true;photos=[];thumbs.innerHTML='';result.classList.remove('show');
- try{
-  for(let i=0;i<grid;i++){statusEl.textContent=`Foto ${i+1} dari ${grid}…`;photos.push(await takePhoto());thumbsRender();await wait(400)}
-  buildFinal();resetBtn.disabled=false;statusEl.innerHTML='<span class="loading"></span> Menyimpan ke Google Drive…';await uploadToDrive();
- }catch(e){statusEl.textContent='Gagal: '+e.message;statusEl.className='status err';shootBtn.disabled=false}
-};
-
-resetBtn.onclick=()=>{
- photos=[];thumbs.innerHTML='';result.classList.remove('show');finalCanvas.style.display='none';video.style.display='block';statusEl.textContent='';shootBtn.disabled=!stream;resetBtn.disabled=true;
-};
-
-function uploadToDrive(){
- return new Promise((resolve,reject)=>{
-  if(APPS_SCRIPT_URL.includes('PASTE_')){reject(new Error('URL Apps Script belum dimasukkan di index.html.'));return}
-  const form=document.getElementById('uploadForm');
-  document.getElementById('uploadImage').value=finalCanvas.toDataURL('image/jpeg',.92);
-  document.getElementById('uploadFilename').value=`Innes-Ilham-${new Date().toISOString().replace(/[:.]/g,'-')}.jpg`;
-  let done=false;
-  const timer=setTimeout(()=>{if(!done)reject(new Error('Upload terlalu lama. Periksa deployment Apps Script dan izin Drive.'))},45000);
-  window.addEventListener('message',function handler(ev){
-   if(!ev.data || ev.data.type!=='INNES_ILHAM_UPLOAD')return;
-   done=true;clearTimeout(timer);window.removeEventListener('message',handler);
-   if(ev.data.ok){
-     const url=ev.data.downloadUrl;downloadBtn.href=url;QRCode.toCanvas(qr,url,{width:220,margin:1});result.classList.add('show');statusEl.textContent='Tersimpan. QR siap dipindai.';statusEl.className='status ok';resolve();
-   }else reject(new Error(ev.data.error||'Upload gagal.'));
-  });
-  form.action=APPS_SCRIPT_URL;form.submit();
+async function upload(){
+ if(APPS_SCRIPT_URL.includes('PASTE_'))throw new Error('URL Apps Script belum dimasukkan ke index.html.');
+ const data=canvas.toDataURL('image/jpeg',.88);
+ const token='PB_'+Date.now()+'_'+Math.random().toString(36).slice(2);
+ const form=document.getElementById('uploadForm');
+ form.action=APPS_SCRIPT_URL;
+ document.getElementById('imageData').value=data;
+ document.getElementById('filename').value='Innes-Ilham-'+Date.now()+'.jpg';
+ document.getElementById('uploadToken').value=token;
+ statusEl.textContent='Mengirim foto ke Google Drive…';
+ return await new Promise((resolve,reject)=>{
+   const timer=setTimeout(()=>{window.removeEventListener('message',handler);reject(new Error('Upload terlalu lama. Pastikan Code.gs terbaru sudah di-deploy sebagai Web App dengan akses Anyone.'))},45000);
+   function handler(ev){
+     if(!ev.data||ev.data.type!=='PHOTObOOTH_UPLOAD_OK'||ev.data.token!==token)return;
+     clearTimeout(timer);window.removeEventListener('message',handler);
+     if(ev.data.ok)resolve(ev.data.url);else reject(new Error(ev.data.error||'Upload gagal.'));
+   }
+   window.addEventListener('message',handler);form.submit();
  });
+}
+
+shoot.onclick=async()=>{
+ shoot.disabled=true;retake.disabled=true;result.classList.remove('show');photos=[];
+ try{
+  for(let i=0;i<grid;i++){statusEl.textContent=`Foto ${i+1} dari ${grid}…`;photos.push(await takePhoto());renderPreview();await wait(450)}
+  makeFinal();const url=await upload();
+  document.getElementById('download').href=url;QRCode.toCanvas(document.getElementById('qr'),url,{width:220,margin:1});
+  result.classList.add('show');statusEl.textContent='Berhasil tersimpan. QR siap dipindai.';statusEl.className='status ok';
+ }catch(e){statusEl.textContent='Gagal: '+e.message;statusEl.className='status err'}
+ finally{shoot.disabled=false;retake.disabled=false}
 };
+retake.onclick=()=>{photos=[];preview.innerHTML='';result.classList.remove('show');statusEl.textContent='Siap mengambil ulang.'};
 </script>
 </body>
 </html>
